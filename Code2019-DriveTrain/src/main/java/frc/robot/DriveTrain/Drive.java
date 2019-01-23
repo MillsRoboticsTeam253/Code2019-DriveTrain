@@ -10,11 +10,8 @@ public class Drive extends Command {
     }
 
     protected void execute() {
-
-        double throttle = Robot.oi.xboxController.getRawAxis(1);
-        double turn = Robot.oi.xboxController.getRawAxis(2);
-        double left = throttle + throttle * turn;
-        double right = throttle - throttle * turn;// this is so extra
+        double left = Robot.oi.xboxController.getY();
+        double right = Robot.oi.xboxController.getY();
 
         Robot.driveTrain.drive(left, right);
     }
